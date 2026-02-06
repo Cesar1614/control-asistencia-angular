@@ -1,0 +1,45 @@
+<h2>Resumen de Colaboradores</h2>
+<table>
+  <thead>
+    <tr>
+      <th>CIP</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Departamento</th>
+      <th>Estatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let col of colaboradores">
+      <td>{{ col.cip }}</td>
+      <td>{{ col.nombre }}</td>
+      <td>{{ col.apellido }}</td>
+      <td>{{ col.departamento }}</td>
+      <td>{{ col.estatus }}</td>
+      </tr>
+      
+        </tbody>
+      </table>
+      <h2>Resumen de Marcaciones</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>CIP</th>
+            <th>Fecha</th>
+            <th>Hora Entrada</th>
+            <th>Hora Salida Almuerzo</th>
+            <th>Hora Entrada Almuerzo</th>
+            <th>Hora Salida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let marcacion of marcaciones">
+            <td>{{ marcacion.cip }}</td>
+            <td>{{ marcacion.fecha }}</td>
+            <td>{{ marcacion.hora_entrada }}</td>
+            <td>{{ marcacion.hora_salida_almuerzo }}</td>
+            <td>{{ marcacion.hora_entrada_almuerzo }}</td>
+            <td>{{ marcacion.hora_salida }}</td>
+          </tr>
+        </tbody>
+      </table>

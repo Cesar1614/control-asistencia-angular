@@ -1,0 +1,31 @@
+<h2>Agregar Marcación</h2>
+<form (ngSubmit)="agregarMarcacion()">
+  <div>
+    <label for="cip">CIP</label>
+    <select id="cip" [(ngModel)]="selectedCip" name="cip">
+      <option *ngFor="let col of colaboradores" [value]="col.cip">{{ col.cip }} - {{ col.nombre }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="fecha">Fecha</label>
+    <input id="fecha" type="date" [(ngModel)]="marcacion.fecha" name="fecha" required>
+  </div>
+  <div>
+    <label for="hora_entrada">Hora Entrada</label>
+    <input id="hora_entrada" type="time" [(ngModel)]="marcacion.hora_entrada" name="hora_entrada" required>
+  </div>
+  <div>
+    <label for="hora_salida_almuerzo">Hora Salida Almuerzo</label>
+    <input id="hora_salida_almuerzo" type="time" [(ngModel)]="marcacion.hora_salida_almuerzo" name="hora_salida_almuerzo" required>
+  </div>
+  <div>
+    <label for="hora_entrada_almuerzo">Hora Entrada Almuerzo</label>
+    <input id="hora_entrada_almuerzo" type="time" [(ngModel)]="marcacion.hora_entrada_almuerzo" name="hora_entrada_almuerzo" required>
+</div>
+<div>
+  <label for="hora_salida">Hora Salida</label>
+  <input id="hora_salida" type="time" [(ngModel)]="marcacion.hora_salida" name="hora_salida" required>
+</div>
+<button type="submit">Agregar Marcación</button>
+</form>
+

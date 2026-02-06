@@ -1,0 +1,59 @@
+<h2>Registrar y Administrar Colaboradores</h2>
+<form (ngSubmit)="colaborador.cip ? actualizarColaborador() : agregarColaborador()">
+  <div>
+    <label for="cip">CIP</label>
+    <input id="cip" type="text" [(ngModel)]="colaborador.cip" name="cip" required>
+  </div>
+  <div>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" type="text" [(ngModel)]="colaborador.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="apellido">Apellido</label>
+    <input id="apellido" type="text" [(ngModel)]="colaborador.apellido" name="apellido" required>
+  </div>
+  <div>
+    <label for="direccion">Dirección</label>
+    <input id="direccion" type="text" [(ngModel)]="colaborador.direccion" name="direccion" required>
+  </div>
+  <div>
+    <label for="telefono">Teléfono</label>
+    <input id="telefono" type="text" [(ngModel)]="colaborador.telefono" name="telefono" required>
+  </div>
+  <div>
+    <label for="departamento">Departamento</label>
+    <input id="departamento" type="text" [(ngModel)]="colaborador.departamento" name="departamento" required>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" [(ngModel)]="colaborador.email" name="email" required>
+  </div>
+  <div>
+    <label for="estatus">Estatus</label>
+    <input id="estatus" type="text" [(ngModel)]="colaborador.estatus" name="estatus" required>
+  </div>
+  <button type="submit">{{ colaborador.cip ? 'Actualizar' : 'Agregar' }}</button>
+</form>
+
+<h3>Lista de Colaboradores</h3>
+<table>
+  <thead>
+    <tr>
+      <th>CIP</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let col of colaboradores">
+      <td>{{ col.cip }}</td>
+      <td>{{ col.nombre }}</td>
+      <td>{{ col.apellido }}</td>
+      <td>
+        <button (click)="editarColaborador(col)">Editar</button>
+        <button (click)="eliminarColaborador(col.cip)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
